@@ -35,23 +35,23 @@ Compared to simple generation, RAG offers:
 
 2. **Retrieval Component**:
    - Chunking: 10,000 character chunks with 1,000 character overlap
-   - Vectorization: Google's `embedding-001` model (768-dimension embeddings)
+   - Vectorization: Google's `embedding-001` model
    - Vector Store: FAISS for efficient similarity search
-   - Retrieval: Top 4 most relevant chunks per query
+   - Retrieval: Top most relevant chunks per query
 
 3. **Generation Component**:
    - LLM: Google's Gemini 1.5 Flash
 
 ## LLM Model Used
 
-### Ideal Choice
-- **GPT-4** (for highest accuracy with technical content)
-
 ### Current Implementation
 - **Google Gemini 1.5 Flash** (free tier available)
   - Balanced speed and accuracy
   - 128K context window for handling large documents
   - Strong mathematical reasoning capabilities
+
+### Ideal Choice
+- **GPT-4** (for highest accuracy with technical content)
 
 ### Open-Source Alternatives
 - **Mistral 7B** (quantized versions for local deployment)
