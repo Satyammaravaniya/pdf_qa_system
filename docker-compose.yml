@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  backend:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - GOOGLE_API_KEY=${GOOGLE_API_KEY}
+      - MISTRAL_API_KEY=${MISTRAL_API_KEY}
+    volumes:
+      - ./faiss_index:/app/faiss_index
+
+  frontend:
+    image: python:3.9-slim
+    working_dir: /app
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./frontend.py:/app/frontend.py
+    command: streamlit run frontend.py --server.port=8501 --server.address=0.0.0.0
+    depends_on:
+      - backend
+    environment:
+      - BACKEND_URL=${BACKEND_URL}

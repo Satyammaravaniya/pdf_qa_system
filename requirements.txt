@@ -1,0 +1,13 @@
+fastapi
+uvicorn
+python-multipart
+pylatexenc
+pdf2image
+mistralai
+langchain-google-genai
+google-generativeai
+langchain-community
+faiss-cpu
+python-dotenv
+streamlit
+requests
